@@ -3,7 +3,7 @@
 #include<stdbool.h>
 #include<Windows.h>
 
-#define TICK 100
+#define TICK 1000
 // Motor Command
 #define MOVE_FORWARD 1
 #define TURN_LEFT 2
@@ -111,6 +111,7 @@ int main(void) {
         }
         else {  //전방에 장애물이 존재하지 않는 경우
             Move_Forward();
+
             Sleep(1 * TICK); // RVC가 앞으로 움직이는 시간
             rvc.elapsed_time += 1 * TICK;
         }
@@ -140,15 +141,19 @@ int Det_OL(struct RVC* rvc) {
 
 void Turn_Left() {
     // RVC가 왼쪽으로 90도 회전한다
+    printf("왼쪽으로 회전\n");
 }
 
 void Turn_Right() {
     // RVC가 오른쪽으로 90도 회전한다
+    printf("오른쪽으로 회전\n");
 }
 
 void Move_Forward() {
     // RVC가 앞으로 움직인다
+    printf("전진\n");
 }
 void Move_Backward() {
     // RVC가 뒤로 움직인다
+    printf("후진\n");
 }
